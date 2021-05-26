@@ -1,16 +1,21 @@
-let snake = "Hola_Buenos_dias";
+let snake = "Hola_áuenos_dias";
 function snakeToCamel() {
-    snake = snake.replace(/([-_])/g, "");
-    snake = snake.charAt(0).toLowerCase() + snake.slice(1);
+    snake= snake.split(/([-_])/g);
+    snake= snake.map(
+        (n) => 
+           n.charAt(0).toUpperCase() + n.slice(1)
+    );
+    snake = snake.join("");
+    snake = snake.charAt(0).toLowerCase(/(?=[A-Z][A-zÀ-ú])/) + snake.slice(1);
     console.log(snake)
 }
 snakeToCamel();
 
-let camel = "holaBuenosDias";
+let camel = "holaÁuenosDias";
 function camelToSnake() {
-    camel = camel.split(/(?=[A-Z])/);
-    const guion = camel.join("-").toString();
-    const barraBaja = camel.join("_").toString();
+    camel = camel.split(/(?=[A-ZÀ-Ú])/);
+    const guion = camel.join("-");
+    const barraBaja = camel.join("_");
     console.log(guion, barraBaja);
 
 
