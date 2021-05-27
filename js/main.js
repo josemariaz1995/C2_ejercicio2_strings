@@ -37,9 +37,9 @@ snakeToCamel();
 
 const fraseCamelCase = "holaBuenosDias";
 
-let camel = "holaÁuenosDias";
+let camel = "holÄuenosDias";
 function camelToSnake() {
-    camel = camel.split(/(?=[A-ZÀ-Ú])/);
+    camel = camel.split(/(?=[A-ZÀ-ÿ])/);
     const guion = camel.join("-").toLowerCase();
     const barraBaja = camel.join("_").toLowerCase();
     console.log(guion, barraBaja);
